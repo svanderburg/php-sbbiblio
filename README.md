@@ -11,9 +11,9 @@ The following fragment encodes a publication list consisting of a journal articl
 and conference paper:
 
     <?php
-    require_once("biblio/model/Author.class.php");
-    require_once("biblio/model/Article.class.php");
-    require_once("biblio/model/InProceedings.class.php");
+    require_once("sbbiblio/model/Author.class.php");
+    require_once("sbbiblio/model/Article.class.php");
+    require_once("sbbiblio/model/InProceedings.class.php");
 
     $publications = array(
         new Article("vanderburg12disnix",
@@ -37,8 +37,8 @@ and conference paper:
             "Test entry")
     );
 
-Viewing the publications
-========================
+Viewing publications
+====================
 From the publications model, we can generate a page that automatically displays
 the publications. Every publication has a abstract and [BibTeX](http://www.bibtex.org)
 section that can be folded and unfolded.
