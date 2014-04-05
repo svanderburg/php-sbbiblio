@@ -1,11 +1,11 @@
 <?php
-require_once("sbbiblio/model/Author.class.php");
-require_once("sbbiblio/model/School.class.php");
-require_once("sbbiblio/model/Article.class.php");
-require_once("sbbiblio/model/InProceedings.class.php");
-require_once("sbbiblio/model/TechReport.class.php");
-require_once("sbbiblio/model/PhDThesis.class.php");
-require_once("sbbiblio/model/MastersThesis.class.php");
+require_once("biblio/model/Author.class.php");
+require_once("biblio/model/School.class.php");
+require_once("biblio/model/Article.class.php");
+require_once("biblio/model/InProceedings.class.php");
+require_once("biblio/model/TechReport.class.php");
+require_once("biblio/model/PhDThesis.class.php");
+require_once("biblio/model/MastersThesis.class.php");
 
 $author_vanDerBurg = new Author("Sander van der Burg");
 $author_dolstra = new Author("Eelco Dolstra", "http://nixos.org/~eelco");

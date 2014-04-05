@@ -1,13 +1,13 @@
 <?php
 error_reporting(E_STRICT | E_ALL);
 
-set_include_path("..");
+set_include_path("../sbbiblio");
 
 /* Include the model (a collection publications) */
 require_once("publications.inc.php");
 
 /* Define the view (the page displaying publications) */
-require_once("sbbiblio/view/html/displaybib.inc.php");
+require_once("biblio/view/html/displaybib.inc.php");
 
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
