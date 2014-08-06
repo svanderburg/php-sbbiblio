@@ -78,7 +78,7 @@ function displayPublication($publication, $baseURL)
 		/* Display pdf link */
 		if($publication->pdf !== null)
 		{
-		    if(substr($publication->pdf, 0, 1) == "/")
+		    if(substr($publication->pdf, 0, 1) == "/" || substr($publication->pdf, 0, 7) == "http://")
 		    	$pdfUrl = $publication->pdf;
 		    else
 		    	$pdfUrl = $baseURL."/".$publication->pdf;
