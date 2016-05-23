@@ -10,32 +10,34 @@ Defining publications
 The following fragment encodes a publication list consisting of a journal article
 and conference paper:
 
-    <?php
-    require_once("sbbiblio/model/Author.class.php");
-    require_once("sbbiblio/model/Article.class.php");
-    require_once("sbbiblio/model/InProceedings.class.php");
+```php
+<?php
+require_once("sbbiblio/model/Author.class.php");
+require_once("sbbiblio/model/Article.class.php");
+require_once("sbbiblio/model/InProceedings.class.php");
 
-    $publications = array(
-        new Article("vanderburg12disnix",
-            array(new Author("Sander van der Burg"), new Author("Eelco Dolstra")),
-            "Disnix: A toolset for distributed deployment",
-            new Journal("Science of Computer Programming (SCP)", "79", null,
-                "http://www.journals.elsevier.com/science-of-computer-programming", "Elsevier"),
-            "52-69", "January", "2014",
-            "<p>Abstract of the article.</p>",
-            "vanderburg12-disnix.pdf",
-            "Test entry"),
+$publications = array(
+    new Article("vanderburg12disnix",
+        array(new Author("Sander van der Burg"), new Author("Eelco Dolstra")),
+        "Disnix: A toolset for distributed deployment",
+        new Journal("Science of Computer Programming (SCP)", "79", null,
+            "http://www.journals.elsevier.com/science-of-computer-programming", "Elsevier"),
+        "52-69", "January", "2014",
+        "<p>Abstract of the article.</p>",
+        "vanderburg12-disnix.pdf",
+        "Test entry"),
 
-        new InProceedings("vanderburg08atomicupgrading",
-            array(new Author("Sander van der Burg"), new Author("Eelco Dolstra"), new Author("Merijn de Jonge")),
-            "Atomic Upgrading of Distributed Systems",
-            new Book("First ACM Workshop on Hot Topics in Software Upgrades (HotSWUp)", "http://www.hotswup.org/2008",
-            "ACM", "Tudor Dumitras and Danny Dig and Iulian Neamtiu", "Nashville, Tennessee, USA"),
-            "October", "2008",
-            "<p>Abstract of the inproceedings.</p>",
-            "vanderburg08-atomic.pdf",
-            "Test entry")
-    );
+    new InProceedings("vanderburg08atomicupgrading",
+        array(new Author("Sander van der Burg"), new Author("Eelco Dolstra"), new Author("Merijn de Jonge")),
+        "Atomic Upgrading of Distributed Systems",
+        new Book("First ACM Workshop on Hot Topics in Software Upgrades (HotSWUp)", "http://www.hotswup.org/2008",
+        "ACM", "Tudor Dumitras and Danny Dig and Iulian Neamtiu", "Nashville, Tennessee, USA"),
+        "October", "2008",
+        "<p>Abstract of the inproceedings.</p>",
+        "vanderburg08-atomic.pdf",
+        "Test entry")
+);
+```
 
 Viewing publications
 ====================
@@ -46,26 +48,32 @@ section that can be folded and unfolded.
 To make folding and unfolding work you need to include the `publications.js`
 script:
 
-    <script type="text/javascript" src="../sbbiblio/scripts/publications.js"></script>
+```html
+<script type="text/javascript" src="../sbbiblio/scripts/publications.js"></script>
+```
 
 The following code displays links allowing visitors to fold and unfold the
 abstract and BibTeX sections:
 
-    <p>
-        [<a href="#" onclick="toggleAllBibTex();">Toggle all BibTex references</a>]
-        [<a href="#" onclick="toggleAllAbstracts();">Toggle all abstracts</a>]
-    </p>
+```html
+<p>
+    [<a href="#" onclick="toggleAllBibTex();">Toggle all BibTex references</a>]
+    [<a href="#" onclick="toggleAllAbstracts();">Toggle all abstracts</a>]
+</p>
+```
 
 The following code displays an unordered list of publications. The base directory
 of the PDF files to which a publication may refer is in the `pdf` folder relative
 to the PHP script:
 
-    <ul>
-        <?php
-        foreach($publications as $publication)
-            displayPublication($publication, dirname($_SERVER["PHP_SELF"])."/pdf");
-        ?>
-    </ul>
+```php
+<ul>
+    <?php
+    foreach($publications as $publication)
+        displayPublication($publication, dirname($_SERVER["PHP_SELF"])."/pdf");
+    ?>
+</ul>
+```
 
 Classes
 =======
