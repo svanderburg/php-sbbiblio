@@ -12,9 +12,9 @@ and conference paper:
 
 ```php
 <?php
-require_once("sbbiblio/model/Author.class.php");
-require_once("sbbiblio/model/Article.class.php");
-require_once("sbbiblio/model/InProceedings.class.php");
+require_once("biblio/model/Author.class.php");
+require_once("biblio/model/Article.class.php");
+require_once("biblio/model/InProceedings.class.php");
 
 $publications = array(
     new Article("vanderburg12disnix",
@@ -67,6 +67,9 @@ of the PDF files to which a publication may refer is in the `pdf` folder relativ
 to the PHP script:
 
 ```php
+<?php
+require_once("biblio/view/html/displaybib.inc.php");
+?>
 <ul>
     <?php
     foreach($publications as $publication)
