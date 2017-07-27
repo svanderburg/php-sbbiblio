@@ -1,4 +1,6 @@
 <?php
+namespace SBBiblio\Model;
+
 /**
  * Contains generic properties of a publication
  */

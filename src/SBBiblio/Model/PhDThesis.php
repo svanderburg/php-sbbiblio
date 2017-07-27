@@ -1,18 +1,18 @@
 <?php
-require_once("Publication.class.php");
+namespace SBBiblio\Model;
 
 /**
- * Contains properties of a masters thesis publication
+ * Contains properties of a phd thesis publication
  */
-class MastersThesis extends Publication
+class PhDThesis extends Publication
 {
 	/** School of the MSc student */
 	public $school;
-	
+
 	/**
 	 * Creates a new masters thesis object.
-	 * 
-	 * @param string $key Unique identifier of the publication 
+	 *
+	 * @param string $key Unique identifier of the publication
 	 * @param array $authors List of authors of the publication
 	 * @param string $title Title of the publication
 	 * @param School $school School of the MSc student

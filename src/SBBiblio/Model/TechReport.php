@@ -1,6 +1,5 @@
 <?php
-require_once("Publication.class.php");
-require_once("Institute.class.php");
+namespace SBBiblio\Model;
 
 /**
  * Contains properties of a technical report

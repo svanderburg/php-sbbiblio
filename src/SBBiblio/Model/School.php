@@ -1,4 +1,6 @@
 <?php
+namespace SBBiblio\Model;
+
 /**
  * Captures properties of a school
  */

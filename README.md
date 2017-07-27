@@ -12,9 +12,11 @@ and conference paper:
 
 ```php
 <?php
-require_once("biblio/model/Author.class.php");
-require_once("biblio/model/Article.class.php");
-require_once("biblio/model/InProceedings.class.php");
+use SBBiblio\Model\Author;
+use SBBiblio\Model\Article;
+use SBBiblio\Model\Book;
+use SBBiblio\Model\InProceedings;
+use SBBiblio\Model\Journal;
 
 $publications = array(
     new Article("vanderburg12disnix",
@@ -49,7 +51,7 @@ To make folding and unfolding work you need to include the `publications.js`
 script:
 
 ```html
-<script type="text/javascript" src="../sbbiblio/scripts/publications.js"></script>
+<script type="text/javascript" src="scripts/publications.js"></script>
 ```
 
 The following code displays links allowing visitors to fold and unfold the
@@ -67,13 +69,10 @@ of the PDF files to which a publication may refer is in the `pdf` folder relativ
 to the PHP script:
 
 ```php
-<?php
-require_once("biblio/view/html/displaybib.inc.php");
-?>
 <ul>
     <?php
     foreach($publications as $publication)
-        displayPublication($publication, dirname($_SERVER["PHP_SELF"])."/pdf");
+        \SBBiblio\View\HTML\displayPublication($publication, dirname($_SERVER["PHP_SELF"])."/pdf");
     ?>
 </ul>
 ```

@@ -1,4 +1,6 @@
 <?php
+namespace SBBiblio\Model;
+
 /**
  * Contains properties of a journal
  */

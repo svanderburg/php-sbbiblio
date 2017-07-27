@@ -1,4 +1,6 @@
 <?php
+namespace SBBiblio\Model;
+
 /**
  * Contains a representation of an author of a publication
  */

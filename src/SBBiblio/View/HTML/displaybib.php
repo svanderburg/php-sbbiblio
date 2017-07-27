@@ -1,5 +1,5 @@
 <?php
-require_once(dirname(__FILE__)."/../bibtex/displaybib.inc.php");
+namespace SBBiblio\View\HTML;
 
 /**
  * Displays a bibliographic entry of a publication
@@ -30,7 +30,7 @@ function displayPublication($publication, $baseURL)
 		/* Display title */
 		?>
 		<strong><?php print($publication->title) ?></strong>,
-		<?php	
+		<?php
 		/* Display publication type specific part */
 		if($publication instanceof MastersThesis)
 			displayMastersThesis($publication);
@@ -78,12 +78,12 @@ function displayPublication($publication, $baseURL)
 		/* Display pdf link */
 		if($publication->pdf !== null)
 		{
-		    if(substr($publication->pdf, 0, 1) == "/" || substr($publication->pdf, 0, 7) == "http://")
-		    	$pdfUrl = $publication->pdf;
-		    else
-		    	$pdfUrl = $baseURL."/".$publication->pdf;
-			?>			
-			[<a href="<?php print($pdfUrl); ?>">pdf</a>]			
+			if(substr($publication->pdf, 0, 1) == "/" || substr($publication->pdf, 0, 7) == "http://")
+				$pdfUrl = $publication->pdf;
+			else
+				$pdfUrl = $baseURL."/".$publication->pdf;
+			?>
+			[<a href="<?php print($pdfUrl); ?>">pdf</a>]
 			<?php
 		}
 		?>
@@ -94,13 +94,13 @@ function displayPublication($publication, $baseURL)
 		<div class="bibtex" id="bibtex-<?php print($publication->key); ?>">
 			<p>BibTeX:</p>
 			<pre>
-<?php displayPublicationBibTex($publication); ?>
+<?php \SBBiblio\View\BibTeX\displayPublicationBibTex($publication); ?>
 			</pre>
 		</div>
 		<?php
 		if($publication->abstract !== null)
 		{	
-			/* Display abstract section */		
+			/* Display abstract section */
 			?>
 			<div class="abstract" id="abstract-<?php print($publication->key); ?>">
 				<p>Abstract:</p>
@@ -122,11 +122,11 @@ function displayPublication($publication, $baseURL)
  */
 function displayMastersThesis($mastersThesis)
 {
-	/* Display master's thesis */				
+	/* Display master's thesis */
     ?>
     Master's thesis,
-	<?php		
-	/* Display school */		
+	<?php
+	/* Display school */
 	?>
 	<a href="<?php print($mastersThesis->school->homepage); ?>"><?php print($mastersThesis->school->name); ?></a>,
 	<?php
@@ -141,9 +141,9 @@ function displayPhDThesis($phdThesis)
 {
 	/* Display PhD thesis */
 	?>
-    PhD thesis,
-	<?php		
-	/* Display school */		
+	PhD thesis,
+	<?php
+	/* Display school */
 	?>
 	<a href="<?php print($phdThesis->school->homepage); ?>"><?php print($phdThesis->school->name); ?></a>,
 	<?php
@@ -162,10 +162,10 @@ function displayInProceedings($inProceedings)
 	<?php
 	if($inProceedings->book->editors !== null)
 	{
-		print($inProceedings->book->editors); ?>, editors,		
+		print($inProceedings->book->editors); ?>, editors,
 		<?php
 	}
-	/* Display book */			
+	/* Display book */
 	?>
 	<a href="<?php print($inProceedings->book->homepage); ?>"><?php print($inProceedings->book->title); ?></a>.
 	<?php
@@ -186,14 +186,14 @@ function displayTechReport($techReport)
 {
 	/* Display technical report and number */
 	?>
-	Technical Report <?php print($techReport->number); ?>,	
+	Technical Report <?php print($techReport->number); ?>,
 	<?php
 	/* Display institute */
 	?>
 	<a href="<?php print($techReport->institute->homepage); ?>"><?php print($techReport->institute->name); ?></a>,
 	<?php
-	/* Display address */	
-	print($techReport->institute->address); ?>, 
+	/* Display address */
+	print($techReport->institute->address); ?>,
 	<?php
 }
 

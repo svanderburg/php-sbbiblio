@@ -1,6 +1,5 @@
 <?php
-require_once("Publication.class.php");
-require_once("Book.class.php");
+namespace SBBiblio\Model;
 
 /**
  * Contains properties of an inproceedings article
@@ -26,7 +25,7 @@ class InProceedings extends Publication
 	function __construct($key, $authors, $title, Book $book, $month, $year, $abstract = NULL, $pdf = NULL, $note = NULL)
 	{
 		parent::__construct($key, $authors, $title, $month, $year, $abstract, $pdf, $note);
-		$this->book = $book;			
+		$this->book = $book;
 	}
 }
 ?>

@@ -1,0 +1,20 @@
+{
+  "name": "svanderburg/php-sbbiblio",
+  "description": "Custom PHP library to display a bibliography",
+  "type": "library",
+  "license": "Apache-2.0",
+  "authors": [
+      {
+          "name": "Sander van der Burg",
+          "email": "svanderburg@gmail.com",
+          "homepage": "http://sandervanderburg.nl"
+      }
+  ],
+  "autoload": {
+      "psr-4": { "SBBiblio\\": "src/SBBiblio" },
+      "files": [
+          "src/SBBiblio/View/HTML/displaybib.php",
+          "src/SBBiblio/View/BibTeX/displaybib.php"
+      ]
+  }
+}

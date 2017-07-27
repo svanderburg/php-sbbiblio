@@ -1,4 +1,6 @@
 <?php
+namespace SBBiblio\View\BibTeX;
+
 /**
 * Displays a BibTex entry for the given publication
 *

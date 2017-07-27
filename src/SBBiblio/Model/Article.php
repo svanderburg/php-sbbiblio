@@ -1,12 +1,11 @@
 <?php
-require_once("Publication.class.php");
-require_once("Journal.class.php");
+namespace SBBiblio\Model;
 
 /**
  * Contains properties of an inproceedings article
  */
 class Article extends Publication
-{	
+{
 	/** Journal in which the article is published */
 	public $journal;
 	
