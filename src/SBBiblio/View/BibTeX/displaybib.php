@@ -1,5 +1,10 @@
 <?php
 namespace SBBiblio\View\BibTeX;
+use SBBiblio\Model\Article;
+use SBBiblio\Model\InProceedings;
+use SBBiblio\Model\MastersThesis;
+use SBBiblio\Model\PhDThesis;
+use SBBiblio\Model\TechReport;
 
 /**
 * Displays a BibTex entry for the given publication
