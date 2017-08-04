@@ -69,14 +69,14 @@ function displayPublication($publication, $baseURL)
 	
 		/* Display BibTeX link */
 		?>
-		[<a href="#" onclick="toggleBibTex('<?php print($publication->key); ?>');">bib</a>]
+		[<a href="#" onclick="sbbiblio.toggleBibTex('<?php print($publication->key); ?>');">bib</a>]
 		<?php
 		
 		/* Display abstract link */
 		if($publication->abstract !== null)
 		{
 			?>
-			[<a href="#" onclick="toggleAbstract('<?php print($publication->key); ?>');">abstract</a>]
+			[<a href="#" onclick="sbbiblio.toggleAbstract('<?php print($publication->key); ?>');">abstract</a>]
 			<?php
 		}
 		

@@ -18,8 +18,8 @@ require_once("includes/publications.php");
 	<body>
 		<h1>Bibliography test</h1>
 		<p>
-			[<a href="#" onclick="toggleAllBibTex();">Toggle all BibTex references</a>]
-			[<a href="#" onclick="toggleAllAbstracts();">Toggle all abstracts</a>]
+			[<a href="#" onclick="sbbiblio.toggleAllBibTex();">Toggle all BibTex references</a>]
+			[<a href="#" onclick="sbbiblio.toggleAllAbstracts();">Toggle all abstracts</a>]
 		</p>
 		<ul>
 			<?php

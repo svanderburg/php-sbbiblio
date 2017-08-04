@@ -59,8 +59,8 @@ abstract and BibTeX sections:
 
 ```html
 <p>
-    [<a href="#" onclick="toggleAllBibTex();">Toggle all BibTex references</a>]
-    [<a href="#" onclick="toggleAllAbstracts();">Toggle all abstracts</a>]
+    [<a href="#" onclick="sbbiblio.toggleAllBibTex();">Toggle all BibTex references</a>]
+    [<a href="#" onclick="sbbiblio.toggleAllAbstracts();">Toggle all abstracts</a>]
 </p>
 ```
 
