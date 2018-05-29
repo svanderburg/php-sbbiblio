@@ -5,6 +5,44 @@ web page. Its usage is quite straight forward -- you must define a *model* that
 encodes a list of publications and invoke a *view* function to generate an HTML
 page of it.
 
+Installation
+============
+This package can be embedded in any PHP project by using
+[PHP composer](https://getcomposer.org). Add the following items to your
+project's `composer.json` file:
+
+```json
+{
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/svanderburg/php-sbbiblio.git"
+    }
+  ],
+
+  "require": {
+    "svanderburg/php-sbbiblio": "@dev",
+  }
+}
+```
+
+and run:
+
+```bash
+$ composer install
+```
+
+Installing development dependencies
+===================================
+When it is desired to modify the code or run the examples inside this
+repository, the development dependencies must be installed by opening
+the base directory and running:
+
+```bash
+$ composer install
+```
+
+
 Defining publications
 =====================
 The following fragment encodes a publication list consisting of a journal article
@@ -94,11 +132,12 @@ The `example/` folder contains a very trivial example.
 
 API documentation
 =================
-This package includes API documentation, which can be generated with [Doxygen](http://www.doxygen.org).
-The Makefile in this package contains a `doc` target and produces the
-corresponding HTML files in `apidoc`:
+This package includes API documentation that can be generated with
+[phpDocumentor](https://www.phpdoc.org):
 
-    $ make doc
+```bash
+$ vendor/bin/phpdoc
+```
 
 License
 =======
