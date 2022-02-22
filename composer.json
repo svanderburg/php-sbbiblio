@@ -16,8 +16,5 @@
           "src/SBBiblio/View/HTML/displaybib.php",
           "src/SBBiblio/View/BibTeX/displaybib.php"
       ]
-  },
-  "require-dev": {
-      "phpdocumentor/phpdocumentor": "2.9.x"
   }
 }
