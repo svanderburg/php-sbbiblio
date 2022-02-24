@@ -1,5 +1,13 @@
 <?php
+/**
+ * @file
+ * @brief View-BibTeX module
+ * @defgroup View-BibTeX
+ * @{
+ */
+
 namespace SBBiblio\View\BibTeX;
+use SBBiblio\Model\Publication;
 use SBBiblio\Model\Article;
 use SBBiblio\Model\InProceedings;
 use SBBiblio\Model\MastersThesis;
@@ -9,9 +17,9 @@ use SBBiblio\Model\TechReport;
 /**
 * Displays a BibTex entry for the given publication
 *
-* @param Publication $publication Publication to display
+* @param $publication Publication to display
 */
-function displayPublicationBibTex($publication)
+function displayPublicationBibTex(Publication $publication): void
 {
 	/* Display type */
 	if($publication instanceof MastersThesis)
@@ -75,9 +83,9 @@ function displayPublicationBibTex($publication)
 /**
 * Displays BibTex entries of a masters thesis
 *
-* @param MastersThesis $mastersThesis Masters thesis entries to display
+* @param $mastersThesis Masters thesis entries to display
 */
-function displayMastersThesisBibTex($mastersThesis)
+function displayMastersThesisBibTex(MastersThesis $mastersThesis): void
 {
 	/* Display school */
 	print("  school = {".$mastersThesis->school->name."},\n");
@@ -86,9 +94,9 @@ function displayMastersThesisBibTex($mastersThesis)
 /**
  * Displays BibTex entries of a PhD thesis
  *
- * @param phdThesis $phdThesis PhD thesis entries to display
+ * @param $phdThesis PhD thesis entries to display
  */
-function displayPhDThesisBibTex($phdThesis)
+function displayPhDThesisBibTex(PhDThesis $phdThesis): void
 {
 	/* Display school */
 	print("  school = {".$phdThesis->school->name."},\n");
@@ -97,9 +105,9 @@ function displayPhDThesisBibTex($phdThesis)
 /**
  * Displays BibTex entries of an inproceedings article
  *
- * @param InProceedings $inProceedings InProceedings entries to display
+ * @param $inProceedings InProceedings entries to display
  */
-function displayInProceedingsBibTex($inProceedings)
+function displayInProceedingsBibTex(InProceedings $inProceedings): void
 {
 	/* Display booktitle */
 	print("  booktitle = {".$inProceedings->book->title."},\n");
@@ -118,9 +126,9 @@ function displayInProceedingsBibTex($inProceedings)
 /**
  * Displays BibTex entries of an technical report
  *
- * @param TechReport $techReport TechReport entries to display
+ * @param $techReport TechReport entries to display
  */
-function displayTechReportBibTex($techReport)
+function displayTechReportBibTex(TechReport $techReport): void
 {
 	/* Display technical report number */
 	print("  number = {".$techReport->number."},\n");
@@ -132,11 +140,12 @@ function displayTechReportBibTex($techReport)
 	print("  address = {".$techReport->institute->address."},\n");
 }
 
-/** Displays BibTex entries of an article
+/**
+ * Displays BibTex entries of an article
  *
- * @param Article $article Article entries to display
+ * @param $article Article entries to display
  */
-function displayArticleBibTex($article)
+function displayArticleBibTex(Article $article): void
 {
 	/* Display journal */
 	print("  journal = {".$article->journal->title."},\n");
@@ -154,4 +163,8 @@ function displayArticleBibTex($article)
 	/* Display pages */
 	print("  pages = {".$article->pages."},\n");
 }
+
+/**
+ * @}
+ */
 ?>

@@ -7,26 +7,26 @@ namespace SBBiblio\Model;
 class Article extends Publication
 {
 	/** Journal in which the article is published */
-	public $journal;
+	public Journal $journal;
 	
 	/** Pages of the article */
-	public $pages;
+	public string $pages;
 	
 	/**
 	 * Creates a new article object.
 	 * 
-	 * @param string $key Unique identifier of the publication 
-	 * @param array $authors List of authors of the publication
-	 * @param string $title Title of the publication
-	 * @param Journal $journal Journal in which the article is published
-	 * @param string $pages Pages of the article
-	 * @param string $month Month of the publication date
-	 * @param string $year Year of the publication date
-	 * @param string $abstract Abstract of the publication (optional)
-	 * @param string $pdf Filename of the PDF (optional)
-	 * @param string $note Additional notes of this publication (optional)
+	 * @param $key Unique identifier of the publication 
+	 * @param $authors List of authors of the publication
+	 * @param $title Title of the publication
+	 * @param $journal Journal in which the article is published
+	 * @param $pages Pages of the article
+	 * @param $month Month of the publication date
+	 * @param $year Year of the publication date
+	 * @param $abstract Abstract of the publication (optional)
+	 * @param $pdf Filename of the PDF (optional)
+	 * @param $note Additional notes of this publication (optional)
 	 */
-	function __construct($key, $authors, $title, Journal $journal, $pages, $month, $year, $abstract = NULL, $pdf = NULL, $note = NULL)
+	function __construct(string $key, array $authors, string $title, Journal $journal, string $pages, string $month, int $year, string $abstract = NULL, string $pdf = NULL, string $note = NULL)
 	{
 		parent::__construct($key, $authors, $title, $month, $year, $abstract, $pdf, $note);
 		$this->journal = $journal;

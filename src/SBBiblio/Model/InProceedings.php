@@ -7,22 +7,22 @@ namespace SBBiblio\Model;
 class InProceedings extends Publication
 {	
 	/** Book/conference in which the article is published */
-	public $book;
+	public Book $book;
 	
 	/**
 	 * Creates a new inproceedings object.
-	 * 
-	 * @param string $key Unique identifier of the publication 
-	 * @param array $authors List of authors of the publication
-	 * @param string $title Title of the publication
-	 * @param Book $book Book/conference in which the article is published
-	 * @param string $month Month of the publication date
-	 * @param string $year Year of the publication date
-	 * @param string $abstract Abstract of the publication (optional)
-	 * @param string $pdf Filename of the PDF (optional)
-	 * @param string $note Additional notes of this publication (optional)
+	 *
+	 * @param $key Unique identifier of the publication
+	 * @param $authors List of authors of the publication
+	 * @param $title Title of the publication
+	 * @param $book Book/conference in which the article is published
+	 * @param $month Month of the publication date
+	 * @param $year Year of the publication date
+	 * @param $abstract Abstract of the publication (optional)
+	 * @param $pdf Filename of the PDF (optional)
+	 * @param $note Additional notes of this publication (optional)
 	 */
-	function __construct($key, $authors, $title, Book $book, $month, $year, $abstract = NULL, $pdf = NULL, $note = NULL)
+	function __construct(string $key, array $authors, string $title, Book $book, string $month, int $year, string $abstract = NULL, string $pdf = NULL, string $note = NULL)
 	{
 		parent::__construct($key, $authors, $title, $month, $year, $abstract, $pdf, $note);
 		$this->book = $book;

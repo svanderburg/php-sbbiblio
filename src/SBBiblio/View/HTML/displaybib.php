@@ -1,5 +1,13 @@
 <?php
+/**
+ * @file
+ * @brief View-HTML module
+ * @defgroup View-HTML
+ * @{
+ */
+
 namespace SBBiblio\View\HTML;
+use SBBiblio\Model\Publication;
 use SBBiblio\Model\Article;
 use SBBiblio\Model\InProceedings;
 use SBBiblio\Model\MastersThesis;
@@ -8,11 +16,11 @@ use SBBiblio\Model\TechReport;
 
 /**
  * Displays a bibliographic entry of a publication
- * 
- * @param Publication $publication Publication to display
- * @param string baseURL Base URL of the publication
+ *
+ * @param $publication Publication to display
+ * @param $baseURL Base URL of the publication
  */
-function displayPublication($publication, $baseURL)
+function displayPublication(Publication $publication, string $baseURL): void
 {
 	?>
 	<li>
@@ -122,14 +130,14 @@ function displayPublication($publication, $baseURL)
 
 /**
  * Displays properties of a masters thesis
- * 
- * @param MastersThesis $mastersThesis Masters thesis entries to display
+ *
+ * @param $mastersThesis Masters thesis entries to display
  */
-function displayMastersThesis($mastersThesis)
+function displayMastersThesis(MastersThesis $mastersThesis): void
 {
 	/* Display master's thesis */
-    ?>
-    Master's thesis,
+	?>
+	Master's thesis,
 	<?php
 	/* Display school */
 	?>
@@ -140,9 +148,9 @@ function displayMastersThesis($mastersThesis)
 /**
 * Displays properties of a PhD thesis
 *
-* @param phdThesis $phdThesis PhD thesis entries to display
+* @param $phdThesis PhD thesis entries to display
 */
-function displayPhDThesis($phdThesis)
+function displayPhDThesis(PhDThesis $phdThesis): void
 {
 	/* Display PhD thesis */
 	?>
@@ -156,10 +164,10 @@ function displayPhDThesis($phdThesis)
 
 /**
  * Displays properties of an inproceedings article
- * 
- * @param InProceedings $inProceedings InProceedings entries to display
+ *
+ * @param $inProceedings InProceedings entries to display
  */
-function displayInProceedings($inProceedings)
+function displayInProceedings(InProceedings $inProceedings): void
 {
 	/* Display editors */
 	?>
@@ -184,10 +192,10 @@ function displayInProceedings($inProceedings)
 
 /**
  * Displays properties of a technical report
- * 
- * @param TechReport $techReport TechReport entries to display
+ *
+ * @param $techReport TechReport entries to display
  */
-function displayTechReport($techReport)
+function displayTechReport(TechReport $techReport): void
 {
 	/* Display technical report and number */
 	?>
@@ -204,10 +212,10 @@ function displayTechReport($techReport)
 
 /**
  * Displays properties of an article
- * 
- * @param Article $article Article entries to display
+ *
+ * @param $article Article entries to display
  */
-function displayArticle($article)
+function displayArticle(Article $article): void
 {
 	/* Display volume */
 	?>
@@ -231,4 +239,8 @@ function displayArticle($article)
 	print($article->journal->publisher);?>,
 	<?php
 }
+
+/**
+ * @}
+ */
 ?>

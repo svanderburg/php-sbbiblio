@@ -7,18 +7,18 @@ namespace SBBiblio\Model;
 class School
 {
 	/** Name of the school */
-	public $name;
+	public string $name;
 	
 	/** URL of the homepage of the school */
-	public $homepage;
+	public string $homepage;
 	
 	/**
 	 * Creates a new school object.
-	 * 
-	 * @param string $name Name of the school
-	 * @param string $homepage URL of the homepage of the school
+	 *
+	 * @param $name Name of the school
+	 * @param $homepage URL of the homepage of the school
 	 */
-	function __construct($name, $homepage)
+	function __construct(string $name, string $homepage)
 	{
 		$this->name = $name;
 		$this->homepage = $homepage;

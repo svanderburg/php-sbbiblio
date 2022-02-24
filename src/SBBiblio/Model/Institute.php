@@ -7,22 +7,22 @@ namespace SBBiblio\Model;
 class Institute
 {
 	/** Name of the institute */
-	public $name;
+	public string $name;
 	
 	/** Address of the institute */
-	public $address;
+	public string $address;
 	
 	/** Homepage of the institute */
-	public $homepage;
+	public ?string $homepage;
 	
 	/**
 	 * Creates a new institute object
-	 * 
-	 * @param string $name string Name of the institute
-	 * @param string $address Address of the institute
-	 * @param string $homepage Homepage of the institute
+	 *
+	 * @param $name string Name of the institute
+	 * @param $address Address of the institute
+	 * @param $homepage Homepage of the institute
 	 */
-	function __construct($name, $address, $homepage = NULL)
+	function __construct(string $name, string $address, string $homepage = NULL)
 	{
 		$this->name = $name;
 		$this->address = $address;

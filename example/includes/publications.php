@@ -20,9 +20,9 @@ $publications = array(
 	new Article("vanderburg12disnix",
 		array($author_vanDerBurg, $author_dolstra),
 		"Disnix: A toolset for distributed deployment",
-		new Journal("Science of Computer Programming (SCP)", "79", null, "http://www.journals.elsevier.com/science-of-computer-programming", "Elsevier"), "52-69", "January", "2014",
+		new Journal("Science of Computer Programming (SCP)", 79, null, "http://www.journals.elsevier.com/science-of-computer-programming", "Elsevier"), "52-69", "January", 2014,
 		"<p>\n".
-		"The process of deploying a distributed system in a network of machines\n". 
+		"The process of deploying a distributed system in a network of machines\n".
 		"is often very complex, labourious and time-consuming, while it is hard to\n".
 		"guarantee that the system will work as expected and that\n".
 		"specific non-functional deployment requirements from the domain are supported.\n".
@@ -46,7 +46,7 @@ $publications = array(
 		array($author_vanDerBurg, $author_dolstra, $author_deJonge),
 		"Atomic Upgrading of Distributed Systems",
 		new Book("First ACM Workshop on Hot Topics in Software Upgrades (HotSWUp)", "http://www.hotswup.org/2008",
-		"ACM", "Tudor Dumitras and Danny Dig and Iulian Neamtiu", "Nashville, Tennessee, USA"), "October", "2008",
+		"ACM", "Tudor Dumitras and Danny Dig and Iulian Neamtiu", "Nashville, Tennessee, USA"), "October", 2008,
 		"<p>Upgrading distributed systems is a complex process. It requires installing the right services\n".
 		"on the right computer, configuring them correctly, and so on, which is error-prone and tedious.\n".
 		"Moreover, since services in a distributed system depend on each other and are updated separately,\n".
@@ -62,7 +62,7 @@ $publications = array(
 	new TechReport("vanderburg10ddeploymentandtesting",
 		array($author_vanDerBurg, $author_dolstra),
 		"Declarative Testing and Deployment of Distributed Systems",
-		"July", "2010",
+		"July", 2010,
 		"TUD-SERG-2010-020",
 		$institute_SERG,
 		"<p>System administrators and developers who deploy distributed systems\n".
@@ -89,7 +89,7 @@ $publications = array(
 		array($author_vanDerBurg),
 		"A Reference Architecture for Distributed Software Deployment",
 		$school_DUT,
-		"June", "2013",
+		"June", 2013,
 		"<p>Nowadays, software systems are bigger and more complicated than people may think.\n".
 		"Apart from the fact that a system has to be correctly constructed and should meet the client's wishes,\n".
 		"they also have to be made ready for use to end-users or in an isolated test environment.\n".
@@ -109,7 +109,7 @@ $publications = array(
 		array($author_vanDerBurg),
 		"Model-driven Distributed Software Deployment",
 		$school_DUT,
-		"March", "2009",
+		"March", 2009,
 		"<p>The software deployment process, which involves all steps to make a software system available for use,\n".
 		"is a complex process. Software systems can operate on just one machine but there are also many software\n".
 		"systems with components running on multiple computers in a network that are working together to reach a\n".

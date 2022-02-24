@@ -7,29 +7,29 @@ namespace SBBiblio\Model;
 class Journal
 {
 	/** Title of the journal */
-	public $title;
+	public string $title;
 	
 	/** Volume of the journal */
-	public $volume;
+	public int $volume;
 	
 	/** Number of the journal */
-	public $number;
+	public ?int $number;
 	
 	/** URL of the homepage of the journal */
-	public $homepage;
+	public string $homepage;
 	
 	/** Name of the publisher */
-	public $publisher;
+	public string $publisher;
 	
 	/**
 	 * Creates a new journal object
-	 * @param string $title Title of the book
-	 * @param string $volume Volume of the book
-	 * @param string $number Number of the book
-	 * @param string $homepage URL of the homepage of the book
-	 * @param string $publisher Name of the publisher
+	 * @param $title Title of the book
+	 * @param $volume Volume of the book
+	 * @param $number Number of the book (optional)
+	 * @param $homepage URL of the homepage of the book
+	 * @param $publisher Name of the publisher
 	 */
-	function __construct($title, $volume, $number, $homepage, $publisher)
+	function __construct(string $title, int $volume, ?int $number, string $homepage, string $publisher)
 	{
 		$this->title = $title;
 		$this->volume = $volume;

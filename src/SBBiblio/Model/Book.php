@@ -7,29 +7,29 @@ namespace SBBiblio\Model;
 class Book
 {
 	/** Title of the book */
-	public $title;
+	public string $title;
 	
 	/** URL of the homepage of the book */
-	public $homepage;
+	public string $homepage;
 	
 	/** Name of the publisher */
-	public $publisher;
+	public string $publisher;
 	
 	/** Names of the editors */
-	public $editors;
+	public string $editors;
 	
 	/** Location where the conference is held or the book is published */
-	public $location;
+	public string $location;
 	
 	/**
 	 * Creates a new book object
-	 * @param string $title Title of the book
-	 * @param string $homepage URL of the homepage of the book
-	 * @param string $publisher Name of the publisher
-	 * @param string $editors Names of the editors
-	 * @param string $location Location where the conference is held or the book is published
+	 * @param $title Title of the book
+	 * @param $homepage URL of the homepage of the book
+	 * @param $publisher Name of the publisher
+	 * @param $editors Names of the editors
+	 * @param $location Location where the conference is held or the book is published
 	 */
-	function __construct($title, $homepage, $publisher, $editors, $location)
+	function __construct(string $title, string $homepage, string $publisher, string $editors, string $location)
 	{
 		$this->title = $title;
 		$this->homepage = $homepage;

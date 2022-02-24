@@ -133,10 +133,10 @@ The `example/` folder contains a very trivial example.
 API documentation
 =================
 This package includes API documentation that can be generated with
-[phpDocumentor](https://www.phpdoc.org):
+[Doxygen](https://www.doxygen.nl):
 
 ```bash
-$ vendor/bin/phpdoc
+$ doxygen
 ```
 
 License
