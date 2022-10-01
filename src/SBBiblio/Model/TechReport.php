@@ -10,8 +10,8 @@ class TechReport extends Publication
 	public string $number;
 	
 	/** Institute that publishes the technical report */
-	public $institute;
-	
+	public Institute $institute;
+
 	/**
 	 * @param $key Unique identifier of the publication
 	 * @param $authors List of authors of the publication

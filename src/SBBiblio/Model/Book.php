@@ -10,7 +10,7 @@ class Book
 	public string $title;
 	
 	/** URL of the homepage of the book */
-	public string $homepage;
+	public ?string $homepage;
 	
 	/** Name of the publisher */
 	public string $publisher;
@@ -29,7 +29,7 @@ class Book
 	 * @param $editors Names of the editors or null if there are no editors
 	 * @param $location Location where the conference is held or the book is published
 	 */
-	function __construct(string $title, string $homepage, string $publisher, ?string $editors, string $location)
+	function __construct(string $title, ?string $homepage, string $publisher, ?string $editors, string $location)
 	{
 		$this->title = $title;
 		$this->homepage = $homepage;

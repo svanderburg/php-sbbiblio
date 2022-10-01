@@ -7,18 +7,18 @@ namespace SBBiblio\Model;
 class Author
 {
 	/** Name of the author */
-	public $name;
+	public string $name;
 
 	/** URL of the homepage */
-	public $homepage;
+	public ?string $homepage;
 	
 	/**
 	 * Creates a new author object
-	 * 
-	 * @param string $name Name of the author
-	 * @param string $homepage URL of the homepage (defaults to NULL)
+	 *
+	 * @param $name Name of the author
+	 * @param $homepage URL of the homepage (defaults to NULL)
 	 */
-	function __construct($name, $homepage = NULL)
+	function __construct(string $name, string $homepage = NULL)
 	{
 		$this->name = $name;
 		$this->homepage = $homepage;

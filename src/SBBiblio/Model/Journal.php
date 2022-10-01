@@ -16,7 +16,7 @@ class Journal
 	public ?int $number;
 	
 	/** URL of the homepage of the journal */
-	public string $homepage;
+	public ?string $homepage;
 	
 	/** Name of the publisher */
 	public string $publisher;
@@ -26,10 +26,10 @@ class Journal
 	 * @param $title Title of the book
 	 * @param $volume Volume of the book
 	 * @param $number Number of the book (optional)
-	 * @param $homepage URL of the homepage of the book
+	 * @param $homepage URL of the homepage of the book (optional)
 	 * @param $publisher Name of the publisher
 	 */
-	function __construct(string $title, int $volume, ?int $number, string $homepage, string $publisher)
+	function __construct(string $title, int $volume, ?int $number, ?string $homepage, string $publisher)
 	{
 		$this->title = $title;
 		$this->volume = $volume;
