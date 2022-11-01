@@ -35,14 +35,14 @@ function displayPublication(Publication $publication, string $baseURL): void
 			else
 			{
 				?>
-				<a href="<?php print($author->homepage); ?>"><?php print($author->name); ?></a>,
+				<a href="<?= $author->homepage ?>"><?= $author->name ?></a>,
 				<?php
 			}
 		}
 		
 		/* Display title */
 		?>
-		<strong><?php print($publication->title) ?></strong>,
+		<strong><?= $publication->title ?></strong>,
 		<?php
 		/* Display publication type specific part */
 		if($publication instanceof MastersThesis)
@@ -77,14 +77,14 @@ function displayPublication(Publication $publication, string $baseURL): void
 	
 		/* Display BibTeX link */
 		?>
-		[<a href="#" onclick="sbbiblio.toggleBibTex('<?php print($publication->key); ?>');">bib</a>]
+		[<a href="#" onclick="sbbiblio.toggleBibTex('<?= $publication->key ?>');">bib</a>]
 		<?php
 		
 		/* Display abstract link */
 		if($publication->abstract !== null)
 		{
 			?>
-			[<a href="#" onclick="sbbiblio.toggleAbstract('<?php print($publication->key); ?>');">abstract</a>]
+			[<a href="#" onclick="sbbiblio.toggleAbstract('<?= $publication->key ?>');">abstract</a>]
 			<?php
 		}
 		
@@ -96,7 +96,7 @@ function displayPublication(Publication $publication, string $baseURL): void
 			else
 				$pdfUrl = $baseURL."/".$publication->pdf;
 			?>
-			[<a href="<?php print($pdfUrl); ?>">pdf</a>]
+			[<a href="<?= $pdfUrl ?>">pdf</a>]
 			<?php
 		}
 		?>
@@ -104,7 +104,7 @@ function displayPublication(Publication $publication, string $baseURL): void
 		<?php
 		/* Display BibTex section */ 
 		?>
-		<div class="bibtex" id="bibtex-<?php print($publication->key); ?>">
+		<div class="bibtex" id="bibtex-<?= $publication->key ?>">
 			<p>BibTeX:</p>
 			<pre>
 <?php \SBBiblio\View\BibTeX\displayPublicationBibTex($publication); ?>
@@ -115,7 +115,7 @@ function displayPublication(Publication $publication, string $baseURL): void
 		{	
 			/* Display abstract section */
 			?>
-			<div class="abstract" id="abstract-<?php print($publication->key); ?>">
+			<div class="abstract" id="abstract-<?= $publication->key ?>">
 				<p>Abstract:</p>
 				<?php
 				print($publication->abstract);
@@ -141,7 +141,7 @@ function displayMastersThesis(MastersThesis $mastersThesis): void
 	<?php
 	/* Display school */
 	?>
-	<a href="<?php print($mastersThesis->school->homepage); ?>"><?php print($mastersThesis->school->name); ?></a>,
+	<a href="<?= $mastersThesis->school->homepage ?>"><?= $mastersThesis->school->name ?></a>,
 	<?php
 }
 
@@ -158,7 +158,7 @@ function displayPhDThesis(PhDThesis $phdThesis): void
 	<?php
 	/* Display school */
 	?>
-	<a href="<?php print($phdThesis->school->homepage); ?>"><?php print($phdThesis->school->name); ?></a>,
+	<a href="<?= $phdThesis->school->homepage ?>"><?= $phdThesis->school->name ?></a>,
 	<?php
 }
 
@@ -180,7 +180,7 @@ function displayInProceedings(InProceedings $inProceedings): void
 	}
 	/* Display book */
 	?>
-	<a href="<?php print($inProceedings->book->homepage); ?>"><?php print($inProceedings->book->title); ?></a>.
+	<a href="<?= $inProceedings->book->homepage ?>"><?= $inProceedings->book->title ?></a>.
 	<?php
 	/* Display location */
 	print($inProceedings->book->location); ?>,
@@ -199,11 +199,11 @@ function displayTechReport(TechReport $techReport): void
 {
 	/* Display technical report and number */
 	?>
-	Technical Report <?php print($techReport->number); ?>,
+	Technical Report <?= $techReport->number ?>,
 	<?php
 	/* Display institute */
 	?>
-	<a href="<?php print($techReport->institute->homepage); ?>"><?php print($techReport->institute->name); ?></a>,
+	<a href="<?= $techReport->institute->homepage ?>"><?= $techReport->institute->name ?></a>,
 	<?php
 	/* Display address */
 	print($techReport->institute->address); ?>,
@@ -219,24 +219,26 @@ function displayArticle(Article $article): void
 {
 	/* Display volume */
 	?>
-	In volume <?php print($article->journal->volume);
+	In volume <?= $article->journal->volume ?>
+	<?php
 	/* Display number */
 	if($article->journal->number !== null)
 	{
 		?>
-		, number <?php print($article->journal->number); ?>
+		, number <?= $article->journal->number ?>
 		<?php
 	}
 	/* Display journal */
 	?>
-	of <a href="<?php print($article->journal->homepage); ?>"><?php print($article->journal->title); ?></a>,
+	of <a href="<?= $article->journal->homepage ?>"><?= $article->journal->title ?></a>,
 	<?php
 	/* Display pages */
 	?>
-	pages <?php print($article->pages); ?>,
+	pages <?= $article->pages ?>,
 	<?php
 	/* Display publisher */
-	print($article->journal->publisher);?>,
+	?>
+	<?= $article->journal->publisher ?>,
 	<?php
 }
 
