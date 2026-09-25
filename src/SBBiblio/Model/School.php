@@ -18,7 +18,7 @@ class School
 	 * @param $name Name of the school
 	 * @param $homepage URL of the homepage of the school (optional)
 	 */
-	function __construct(string $name, string $homepage = null)
+	function __construct(string $name, ?string $homepage = null)
 	{
 		$this->name = $name;
 		$this->homepage = $homepage;

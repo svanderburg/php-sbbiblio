@@ -12,7 +12,7 @@ class Institute
 	/** Address of the institute */
 	public string $address;
 	
-	/** Homepage of the institute */
+	/** Homepage of the institute or null if there is no homepage */
 	public ?string $homepage;
 	
 	/**
@@ -20,9 +20,9 @@ class Institute
 	 *
 	 * @param $name string Name of the institute
 	 * @param $address Address of the institute
-	 * @param $homepage Homepage of the institute
+	 * @param $homepage Homepage of the institute (optional)
 	 */
-	function __construct(string $name, string $address, string $homepage = NULL)
+	function __construct(string $name, string $address, ?string $homepage = null)
 	{
 		$this->name = $name;
 		$this->address = $address;

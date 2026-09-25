@@ -22,7 +22,7 @@ class MastersThesis extends Publication
 	 * @param $pdf Filename of the PDF (optional)
 	 * @param $note Additional notes of this publication (optional)
 	 */
-	function __construct(string $key, array $authors, string $title, School $school, string $month, int $year, string $abstract = NULL, string $pdf = NULL, string $note = NULL)
+	function __construct(string $key, array $authors, string $title, School $school, string $month, int $year, ?string $abstract = null, ?string $pdf = null, ?string $note = null)
 	{
 		parent::__construct($key, $authors, $title, $month, $year, $abstract, $pdf, $note);
 		$this->school = $school;
